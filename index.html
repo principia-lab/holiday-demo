@@ -1,19 +1,24 @@
-<!-- 🌲 Grove presents: Hybrid Lab Holiday Fundraiser & Giveaway 🌲-->
+<!-- Load Inter font via Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
   html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     background-color: #fefefe;
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    color: #223344;
   }
 
   .grove-banner {
     max-width: 700px;
-    margin: 0 auto;
+    margin: 32px auto;
     padding: 32px 16px;
     text-align: center;
-    font-family: Inter, system-ui, sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
     position: relative;
     background: linear-gradient(180deg, #ffffff 0%, #fff9f2 50%, #f6f8ff 100%);
     border-radius: 1rem;
@@ -40,19 +45,76 @@
 
   @keyframes twinkle {
     from { opacity: 0.3; transform: scale(0.9) rotate(0deg); }
-    to { opacity: 1; transform: scale(1.1) rotate(15deg); }
+    to   { opacity: 1;   transform: scale(1.1) rotate(15deg); }
   }
 
   h1.grove-title {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #223344;
   }
 
   h1.grove-title span {
     color: #2b7a2b;
     text-shadow: 0 0 6px rgba(43, 122, 43, 0.2);
+  }
+
+  h2, h3 {
+    color: #223344;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  p, table {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  table {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto 16px;
+    border-collapse: collapse;
+  }
+
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  a {
+    color: #2b7a2b;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Progress bar */
+  .progress-container {
+    width: 80%;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 20px;
+    margin: 10px auto;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #57cc99, #38a3a5);
+    width: 40%; /* example value */
+  }
+
+  /* Small footer */
+  .footer {
+    font-size: 0.85rem;
+    color: #777;
+    text-align: center;
+    margin-top: 24px;
   }
 </style>
 
@@ -62,19 +124,22 @@
   </h1>
 </div>
 
+<div style="max-width:700px; margin:0 auto; padding:16px;">
   <h2>🎁 Hybrid Lab Holiday Fundraiser & Giveaway Event 🎁</h2>
   <div id="holiday-demo"></div>
+
   <script>
-  fetch('holiday-demo.html')
-    .then(response => {
-      if (!response.ok) throw new Error('Cannot load giveaway HTML');
-      return response.text();
-    })
-    .then(html => {
-      document.getElementById('holiday-demo').innerHTML = html;
-    })
-    .catch(err => console.error(err));
-</script>
+    fetch('holiday-demo.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Cannot load giveaway HTML');
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('holiday-demo').innerHTML = html;
+      })
+      .catch(err => console.error(err));
+  </script>
+
   <p><em>A science-backed experiment in open support for independent AI research</em></p>
 
   <h3>💡 Overview</h3>
@@ -83,24 +148,17 @@
     We’re sharing selected materials from our early workspace. It's a mix of electronics, books, study items, and symbolic artifacts as <strong>tokens of appreciation</strong> to those who help sustain our open research and sandbox development.
   </p>
 
-  <p>
-    All proceeds go directly to the lab’s ongoing development: <strong>hosting, tools, documentation, and collaborative prototyping</strong>.  
-    This is <strong>not a personal fundraiser</strong>; all funds are allocated toward lab activities and transparent research continuity.
-  </p>
-
   <h3>🎯 Purpose & Funding Goal</h3>
   <p>
     Help us raise <strong>$7,000–$15,000</strong> to sustain a <strong>6–12 month hybrid lab research phase</strong> supporting housing, meals, and connectivity for coding and experimental projects.
   </p>
 
-  <!-- 💰 Progress Bar -->
-  <div style="width:80%; background:#eee; border-radius:10px; overflow:hidden; height:20px; margin:10px auto;">
-    <div style="width:40%; height:100%; background:linear-gradient(90deg, #57cc99, #38a3a5);"></div>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
   </div>
-  <p style="font-size:0.9rem; color:#555;">Progress: $6,000 raised of $15,000 goal (example)</p>
+  <p style="text-align:center; font-size:0.9rem; color:#555;">Progress: $6,000 raised of $15,000 goal (example)</p>
 
   <h3>🧩 Shared Materials</h3>
-  <p>Each item represents part of our early foundation, the books, components, prints, and artifacts that tell the lab’s story.</p>
   <table>
     <tr><th>Category</th><th>Description</th><th>Condition</th><th>Qty</th></tr>
     <tr><td>Electronics & Components</td><td>Sensors, tools, small devices</td><td>Functional</td><td>Mixed</td></tr>
@@ -112,18 +170,18 @@
   <h3>🧭 How to Participate</h3>
   <p>
     <strong>Support the Lab</strong><br>
-    – Donate any amount via <a href="your-paypal-link" target="_blank">PayPal</a><br>
+    – Donate via <a href="your-paypal-link" target="_blank">PayPal</a><br>
     – Or become a monthly supporter via <a href="your-patreon-link" target="_blank">Patreon</a>
   </p>
 
   <p>
     <strong>Optional Giveaway Registration:</strong><br>
-    Complete the form → <a href="your-form-link" target="_blank">Google/Notion Form</a> (email + country for contact/shipping)
+    Complete the form → <a href="your-form-link" target="_blank">Google/Notion Form</a>
   </p>
 
   <h3>🗓️ Timeline</h3>
   <p>
-    Entries close: <strong>Entries close ≈ Oct 20 (soft cutoff, donations after this may still count toward ongoing support).</strong><br>
+    Entries close: <strong>≈ Oct 20</strong><br>
     Winners announced: <strong>October 25</strong><br>
     Transparency log published: <strong>January 2026</strong>
   </p>
@@ -131,15 +189,15 @@
   <h3>💳 Support Channels</h3>
   <p>💫 Every contribution sustains our open, ethical AI development covering hosting, research tools, and documentation.</p>
 
-  <p>
+  <p style="text-align:center;">
     <a href="your-paypal-link" target="_blank">
       <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_150x38.png" alt="PayPal Donate" />
     </a>
-    <br>
+    &nbsp;&nbsp;
     <a href="your-patreon-link" target="_blank">
       <img src="https://c5.patreon.com/external/logo/downloads/black_horizontal.png" alt="Patreon Support" height="38" />
     </a>
   </p>
 
-  <p style="font-size:0.85rem; color:#777;">© 2025 Principia Lab</p>
+  <div class="footer">© 2025 Principia Lab</div>
 </div>
